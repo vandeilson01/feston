@@ -111,6 +111,8 @@ class Database extends Config
         //    $this->defaultGroup = 'tests';
         //}
 
+        $_SERVER['SERVER_NAME'] = 'localhost';
+
 		$_CONST_SERVER_NAME = $_SERVER['SERVER_NAME'];
 		if( $_CONST_SERVER_NAME == "localhost" ){
 			$this->defaultGroup = 'default_localhost';

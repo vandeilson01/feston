@@ -128,7 +128,7 @@ abstract class PainelController extends Controller
 		//print ']</pre>';
 
 		if( $index !== false ){ 
-			$filteredSegments = array_slice($segments, $index + 1); // Retornar os elementos a partir de $index + 1 até o final
+			$filteredSegments = array_slice($segments, $index + 1); // Retornar os elementos a partir de $index + 1 atï¿½ o final
 			//print '<pre>[';
 			//print_r( $filteredSegments );
 			//print ']</pre>';

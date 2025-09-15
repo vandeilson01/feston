@@ -65,7 +65,9 @@
 			<div class="row align-items-center">
 				<div class="col-3 col-md-2">
 					<div class="logotipo">
-						<a href="<?php echo(site_url()); ?>"><img src="assets/media/logotipo.png?=<?php echo($time); ?>" class="img-fluid" style="max-height: 70px;" /></a>
+						<!-- <a href="<?php echo(site_url()); ?>"> -->
+							<img src="assets/media/logotipo.png?=<?php echo($time); ?>" class="img-fluid" style="max-height: 70px;" />
+						<!-- </a> -->
 					</div>
 				</div>
 				<div class="col-9 col-md-3">
@@ -88,15 +90,26 @@
 							<?php }else{ ?>
 							<li>
 
-								<a href="<?php echo(site_url('inscricoes')); ?>">
+								<!-- <a href="<?php echo(site_url('inscricoes')); ?>"> -->
 								<div class="personal-image-header">
 									<label class="label">
-										<figure class="personal-figure-header">
-											<img src="assets/media/icon-profile2.png" class="personal-avatar-header" alt="avatar">
-										</figure>
+									
+
+										<div class="btn-group">
+											<!-- <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												Action
+											</button> -->
+											<a href="<?php echo(site_url('inscricoes/logout')); ?>">
+												Sair
+											</a>
+											<!-- <figure class="personal-figure-header">
+												<img src="assets/media/icon-profile2.png" class="personal-avatar-header" alt="avatar"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											</figure> -->
+											 
+										</div>
 									</label>
 								</div>
-								</a>
+								<!-- </a> -->
 
 							</li>
 							<?php } ?>
@@ -233,6 +246,7 @@
 	<script type="text/javascript" src="assets/js/app_plugins.js?t=<?php echo($time); ?>"></script>
 
 	<script src="assets/js/mustache.js"></script>
+	
 
 	<script type="text/javascript" src="assets/js/stellarnav.js"></script>
 	<script type="text/javascript">

@@ -220,8 +220,8 @@
 																		<div class="col-12 col-md-12">
 																			<div class="form-group">
 																				<div>
-																					<label class="form-label" for="corgf_evcfg_seletiva">Link da Coreografia (Youtube)</label>
-																					<input type="text" name="corgf_evcfg_seletiva" id="corgf_evcfg_seletiva" class="form-control" v-model="fields.corgf_evcfg_seletiva" value="" />
+																					<label class="form-label" for="corgf_evcfg_seletiva">Link da Coreografia (Youtube)*</label>
+																					<input type="text" required name="corgf_evcfg_seletiva" id="corgf_evcfg_seletiva" class="form-control" v-model="fields.corgf_evcfg_seletiva" value="" />
 																				</div>
 																				<div class="form-error" v-if="error.corgf_evcfg_seletiva.length"><small>{{ error.corgf_evcfg_seletiva }}</small></div>
 																			</div>

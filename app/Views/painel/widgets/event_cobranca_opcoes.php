@@ -219,14 +219,11 @@
 							<div class="form-group">
 								<label class="form-label" for="evcob_config_mp_parcelas">Limite de Parcelas</label>
 								<select class="form-select" name="<?php echo($aFLD); ?>evcob_config_mp[parcelas]" id="<?php echo($aFLD); ?>evcob_config_mp_parcelas">
-									<?php
-									for ($xParc = 1; $xParc <= $limite_parcelas; $xParc++) {
-										$selected = (($mp_parcelas == $xParc) ? 'selected' : '');
-									?>
-										<option value="<?php echo($xParc); ?>" <?php echo($selected); ?> translate="no"><?php echo($xParc); ?></option>
-									<?
-									}
-									?>
+									<?php for ($xParc = 1; $xParc <= $limite_parcelas; $xParc++) {
+                                        $selected = $mp_parcelas === $xParc ? 'selected' : '';
+                                    ?>
+                                        <option value="<?php echo $xParc; ?>" <?php echo $selected; ?> translate="no"><?php echo $xParc; ?></option>
+                                    <?php } ?>
 								</select>
 							</div>
 						</div>

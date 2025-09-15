@@ -385,13 +385,14 @@ class Particautorizacoes extends PainelController
 					'LINK_DA_AUTORIZACAO' => $LINK_DA_AUTORIZACAO,
 					'DATA_DA_INSCRICAO' => date("d/m-Y H:i:s"),
 				];
-				$stringEmail = view('emails/participantes-autorizacoes-view-antigo', $data_fields);
+				// $stringEmail = view('emails/participantes-autorizacoes-view-antigo', $data_fields);
+				$stringEmail = view('emails/confirmacao-inscricao-view', $data_fields);
 
 				$enviar_para = array( 
 					//'listasguardiao@gmail.com',
 					'dancacarajas@gmail.com',
 					//'marcio.mjlima1977@gmail.com',
-					'marcio.misterlab@gmail.com',
+					// 'marcio.misterlab@gmail.com',
 					//'mjlima@hotmail.com',
 					//'dancacarajas@gmail.com',
 				);

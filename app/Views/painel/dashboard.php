@@ -14,7 +14,7 @@
 	<div id="app">
 		<div class="row align-items-start">
 			<div class="col-12 col-md-3">
-
+                DASHBOARD
 			</div>
 			<div class="col-12 col-md-9">
 
@@ -22,8 +22,7 @@
 		</div>
 	</div>
 
-
-
+ 
 <?php
 	$this->endSection('content'); 
 ?>

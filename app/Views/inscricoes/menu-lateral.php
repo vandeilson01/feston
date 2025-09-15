@@ -1,4 +1,4 @@
-	<?php 
+	<!-- <?php 
 		//print($step);
 	?>	
 
@@ -74,4 +74,44 @@
 		</div>
 	</div>
 
+ -->
+
+ <?php 
+// $step = 3; // Exemplo: passo atual
+$steps = [
+    ['title' => 'Grupo', 'desc' => 'Configurações'],
+    ['title' => 'Participantes', 'desc' => 'Informações'],
+    ['title' => 'Coreografias', 'desc' => 'Detalhes'],
+    ['title' => 'Finalização da Inscrição', 'desc' => 'Detalhes'],
+    ['title' => 'Status', 'desc' => 'Quando o pagamento for confirmado'],
+    ['title' => 'Relatórios', 'desc' => 'Impressão de relatórios'],
+];
+?>
+
+<div class="d-flex flex-column">
+    <div class="naveg-steps">
+        <div class="naveg-steps-numbers">
+
+            <?php foreach($steps as $index => $s): 
+                $num = $index + 1;
+                $isCurrent = ($step >= $num) ? 'current' : '';
+            ?>
+            <div class="naveg-steps-item <?php echo $isCurrent; ?>">
+                <div class="steps-icon">
+                    <?php if($step > $num): ?>
+                        <i class="stepper-check fas fa-check"></i>
+                    <?php else: ?>
+                        <span class="steps-number"><?php echo $num; ?></span>
+                    <?php endif; ?>
+                </div>
+                <div class="steps-label">
+                    <h3 class="steps-title"><?php echo $s['title']; ?></h3>
+                    <div class="steps-desc"><?php echo $s['desc']; ?></div>
+                </div>
+            </div>
+            <?php endforeach; ?>
+
+        </div>
+    </div>
+</div>
 

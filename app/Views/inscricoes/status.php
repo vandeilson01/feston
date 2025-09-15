@@ -3,7 +3,7 @@
 	$this->section('content'); 
 
 	$event_hashkey = (isset($rs_event->event_hashkey) ? $rs_event->event_hashkey : "");
-	$event_titulo = (isset($rs_event->event_titulo) ? $rs_event->event_titulo : "");
+	$event_titulo = (isset($rs_event->event_titulo) ? $rs_event->event_titulo : "Status de Doações");
 
 	$grevt_id = (isset($rs_event->grp_id) ? $rs_event->grp_id : "");
 	$grp_hashkey = (isset($rs_event->grp_hashkey) ? $rs_event->grp_hashkey : "");
@@ -205,7 +205,7 @@
 												<div class="row align-items-start">
 													<div class="col-12 col-md-12">
 														<div class="mb-3">
-															<h2 class="fw-bolder text-dark title-step m-0">Status de Doações</h2>
+															<h2 class="fw-bolder text-dark title-step m-0">Status de Inscrição</h2>
 														</div>
 													</div>
 												</div>
@@ -214,8 +214,12 @@
 												<div v-show="Object.keys(lista_doacoes_geral).length">
 													<div class="row justify-content-center mb-3">
 														<div class="col-12 col-md-12">
-															<div style="padding: 12px; border-radius: 6px; background-color: rgb(221 221 221);">
-																<div class="table-box table-responsive">
+															<!-- <div style="padding: 12px; border-radius: 6px; background-color: rgb(221 221 221);"> -->
+
+															<div class="table-box table-responsive redound">
+																<button style="background-color:#feb100;" class="p-2 rounded border-0 text-black"><strong>Aguardando Avaliação da Curadoria<strong></button>
+															</div>
+																<!-- <div class="table-box table-responsive">
 																	<table id="example2" class="display nowrap table table-striped table-bordered m-0" style="width:100%">
 																		<thead>
 																			<tr>
@@ -262,21 +266,34 @@
 																			</div>
 																		</div>
 																	</div>
-																</div>
+																</div> -->
 																
-																<div class="mt-3 card-atencao" v-show="evcfg_config_infos.evcfg_doacao_entrega_forma == 'credenciamento'">
+																<!-- <div class="mt-3 card-atencao" v-show="evcfg_config_infos.evcfg_doacao_entrega_forma == 'credenciamento'">
 																	<div><h3>Atenção!</h3></div>
 																	<div><strong>As entregas das doações devem ser feitas no momento do credenciamento</strong></div>
 																</div>
-															</div>
+															</div> -->
 														</div>
 													</div>
 												</div>
 											</div>
 											<?php } ?>
 
+
+											<div class="row align-items-start">
+												<div class="col-12 col-md-12">
+													<div class="alert alert-warning" role="alert">
+														O resultado dos grupos e coreografias aprovadas será divulgado até o dia 15 de outubro de 2025 no site oficial do festival (https://dancacarajas.com.br
+														) e comunicado aos responsáveis via e-mail e/ou WhatsApp cadastrados no sistema de inscrição.
+														<br/>
+														Além disso, os participantes poderão consultar o status da sua inscrição diretamente no sistema de inscrição, utilizando o login de acesso cadastrado.
+													</div>
+												</div>
+											</div>
+
 											<?php
-											if( isset($rs_list_autorizacoes) ){
+											#rs_list_autorizacoes
+											if( isset($rs_list_autorizacoess) ){
 											?>
 											<div class="row align-items-start">
 												<div class="col-12 col-md-12">

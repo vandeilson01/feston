@@ -967,6 +967,8 @@
 		</div>
 	</section>
 
+ 
+
 <?php
 	$this->endSection('content'); 
 
@@ -1529,7 +1531,14 @@
 	});
 	</script>
 
+
+
 	<script type="text/javascript" src="assets/vue/utils.js?t=<?= $time ?>"></script>
 	<script type="text/javascript" src="assets/vue/inscricoes.js?t=<?= $time ?>"></script>
 
+
+
+
+
 <?php $this->endSection('scripts'); ?>
+

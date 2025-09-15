@@ -283,6 +283,37 @@ class Coreografias extends PainelController
 		}
 
 
+
+		// $query_grupos = $this->grpMD->select_all_by_insti_id();
+        // if (!empty($query_grupos)) {
+        //     $this->data['rs_grupos'] = $query_grupos;
+        // }
+
+        // // Buscar modalidades
+        // $query_modalidades = $this->modlMD->select_all_by_insti_id((int)$this->session_user_id);
+        // if (!empty($query_modalidades)) {
+        //     $this->data['rs_modalidades'] = $query_modalidades;
+        // }
+
+        // // Buscar formatos
+        // $query_formatos = $this->formtMD->select_all_by_insti_id((int)$this->session_user_id);
+        // if (!empty($query_formatos)) {
+        //     $this->data['rs_formatos'] = $query_formatos;
+        // }
+
+        // // Buscar categorias
+        // $query_categorias = $this->categMD->select_all_by_insti_id((int)$this->session_user_id);
+        // if (!empty($query_categorias)) {
+        //     $this->data['rs_categorias'] = $query_categorias;
+        // }
+
+        // // Buscar participantes
+        // $query_participantes = $this->partcMD->select_all_by_insti_id((int)$this->session_user_id);
+        // if (!empty($query_participantes)) {
+        //     $this->data['rs_participantes'] = $query_participantes;
+        // }
+
+
 		return view($this->directory .'/coreografias-form', $this->data);
 	}
 

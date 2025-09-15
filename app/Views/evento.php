@@ -180,10 +180,10 @@
 						</div>
 					</div>
 
-					<div class="card card-workshops mb-3" style="">
+					<!--<div class="card card-workshops mb-3" style="">
 						<div class="card-header" style="">
 							<h2>WORKSHOPS</h2>
-							<!-- <img src="<?php echo($evento_banner); ?>" class="img-fluid" > -->
+							#<img src="<?php echo($evento_banner); ?>" class="img-fluid" >  
 						</div>
 						<div class="card-body">
 
@@ -266,7 +266,7 @@
 							</div></a>
 
 						</div>
-					</div>
+					</div>-->
 
 
 

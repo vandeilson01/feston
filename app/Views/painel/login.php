@@ -213,7 +213,7 @@
 										<div class="col-12 col-md-12">
 											<div class="form-group">
 												<label class="form-label" for="EMAIL">E-mail / login:</label>
-												<input type="text" name="EMAIL" id="EMAIL" class="form-control" value="" />
+												<input type="text" name="email" id="EMAIL" class="form-control" />
 											</div>
 										</div>
 									</div>
@@ -222,7 +222,7 @@
 										<div class="col-12 col-md-12">
 											<div class="form-group">
 												<label class="form-label" for="SENHA">Senha:</label>
-												<input type="password" name="SENHA" id="SENHA" class="form-control" value="" />
+												<input type="password" name="senha" id="SENHA" class="form-control" />
 											</div>
 										</div>
 									</div>

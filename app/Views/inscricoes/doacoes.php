@@ -3,7 +3,7 @@
 	$this->section('content'); 
 
 	$event_hashkey = (isset($rs_event->event_hashkey) ? $rs_event->event_hashkey : "");
-	$event_titulo = (isset($rs_event->event_titulo) ? $rs_event->event_titulo : "");
+	$event_titulo = (isset($rs_event->event_titulo) ? $rs_event->event_titulo : "Extrato da Inscrição");
 
 	$grevt_id = (isset($rs_event->grp_id) ? $rs_event->grp_id : "");
 	$grp_hashkey = (isset($rs_event->grp_hashkey) ? $rs_event->grp_hashkey : "");
@@ -59,8 +59,7 @@
 	];
 
 	$rs_event_valores = (isset($rs_event_valores) ? $rs_event_valores->getResult() : []);
-
-
+ 
 	//print_debug( $rs_quant_por_doacoes , '150px' );
 	//print('<pre style="height: 140px; font-size: .65rem; line-height: 1.4;">');
 	//print_r($rs_quant_por_doacoes);
@@ -71,7 +70,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-12 col-md-12">
-					<h3>Inscrições > <?php echo( $event_titulo ); ?></h3>
+					<h3>Inscrições > <?php #echo( $event_titulo ); ?>Extrato da Inscrição</h3>
 				</div>
 			</div>
 			<div class="row pt-3 pb-5">
@@ -123,7 +122,7 @@
 													<div class="container">
 														<div class="row justify-content-center">
 															<div class="col-12">
-																<h2 class="fw-bolder text-dark title-step">Doações</h2>
+																<h2 class="fw-bolder text-dark title-step">Extrato da Inscrição</h2>
 																	
 																<div class="d-none">
 																	<input type="text" name="corgf_hashkey" id="corgf_hashkey" class="" v-model="fields.corgf_hashkey" value="" />
@@ -150,11 +149,11 @@
 
 																				<div class="d-flex justify-content-between mb-1 pb-1">
 																					<div>
-																						<h3 style="color: #000000;">Por participantes</h3>
+																						<h3 style="color: #000000;">Relação de participantes</h3>
 																					</div> 
 																				</div>
 
-																				<div class="d-flex justify-content-between mb-3 pb-1">
+																				<!--<div class="d-flex justify-content-between mb-3 pb-1">
 																					<div>
 																						<div>
 																							Descrição da doação
@@ -163,7 +162,7 @@
 																							<h3 class="m-0" style="color: #000000; font-size: 1.20rem;"> {{ lista_doacoes_geral['doacoes-por-participantes'].evvlr_txt_descr }}</h3>
 																						</div>
 																					</div> 
-																				</div>
+																				</div>-->
 
 																				<div class="table-box table-responsive">
 																					<table id="example2" class="display nowrap table table-striped table-bordered m-0" style="width:100%">
@@ -233,11 +232,11 @@
 																				
 																				<div class="d-flex justify-content-between mb-2 pb-1">
 																					<div>
-																						<h3 style="color: #000000;">Por coreografias</h3>
+																						<h3 style="color: #000000;">Relação de coreografias</h3>
 																					</div> 
 																				</div>
 
-																				<div class="d-flex justify-content-between mb-3 pb-1">
+																				<!--<div class="d-flex justify-content-between mb-3 pb-1">
 																					<div>
 																						<div>
 																							Descrição da doação
@@ -246,7 +245,7 @@
 																							<h3 class="m-0" style="color: #000000; font-size: 1.20rem;"> {{ lista_doacoes_geral['doacoes-por-coreografias'].evvlr_txt_descr }}</h3>
 																						</div>
 																					</div> 
-																				</div>
+																				</div>-->
 
 																				<div class="table-box table-responsive">
 																					<table id="example2" class="display nowrap table table-striped table-bordered m-0" style="width:100%">
@@ -307,7 +306,7 @@
 																</div>
 																
 																<!-- DOAÇÕES -->
-																<div v-show="Object.keys(lista_doacoes_geral).length">
+																<!--<div v-show="Object.keys(lista_doacoes_geral).length">
 																	<div class="row justify-content-center mb-3">
 																		<div class="col-12 col-md-12">
 																			<div style="padding: 12px; border-radius: 6px; background-color: rgb(221 221 221);">
@@ -372,12 +371,12 @@
 																					<div><strong>As entregas das doações devem ser feitas no momento do credenciamento</strong></div>
 																				</div>
 
-																				<!-- <pre>{{evcfg_config_infos.evcfg_doacao_entrega_forma}}</pre> -->
+																				# <pre>{{evcfg_config_infos.evcfg_doacao_entrega_forma}}</pre> 
 
 																			</div>
 																		</div>
 																	</div>
-																</div>
+																</div>-->
 
 																<div class="d-none" v-show="lista_de_coreografias.coreografias.length > 0">
 																	<div class="row justify-content-center mb-3" v-for="(coreografia, index) in lista_de_coreografias.coreografias" :key="coreografia.corgf_id">
@@ -479,7 +478,7 @@
 																		</div>
 																		<div class="col-8 col-md-4">
 																			<div class="d-grid">
-																				<button type="button" class="btn btn-primary" v-on:click="SendNextCobranca()" :disabled='btnDisabledContinue'>Continuar</button>
+																				<button type="button" class="btn btn-primary nextbut" v-on:click="SendNextCobranca()" :disabled='btnDisabledContinue'>Concluir Inscrição</button>
 																			</div>
 																		</div>
 																	</div>
@@ -967,6 +966,79 @@
 	});
 	</script>
 
+	<script>
+
+		$(document).on('click', '.nextbut', function (e) {
+				e.preventDefault();
+				let $this = $(this);
+				let $codigo = $this.data( "codigo" );
+				let $row = $this.closest( ".trRow" );
+
+				Swal.fire({
+					title: 'Atenção!',
+					icon: 'warning',
+					html:
+						'Confirme o arquivamento deste pedido.',
+					type: 'warning',
+					showCancelButton: true,
+					cancelButtonColor: "#AAAAAA",
+					confirmButtonColor: "#3c973e",
+					//confirmButtonColor: '$danger',
+					//cancelButtonColor: '$success',
+					confirmButtonText: 'Sim! Confirmo.',
+					cancelButtonText: 'Cancelar',
+					reverseButtons: true
+				}).then(function(result) {
+					if (result.value) {
+						// ------------------------------------------------------
+						let $formData = {
+							codigo: $codigo
+						};
+
+						$.ajax({
+							url: painel_url  +'historico/ajaxform/ARQUIVAR-REGISTRO',
+							method:"POST",
+							type: "POST",
+							dataType: "json",
+							data: $formData,
+							crossDomain: true,
+							beforeSend: function(response) {
+								console.log('1 beforeSend');
+								console.log(response);
+							},
+							complete: function(response) { 
+								console.log('3 complete');
+								console.log(response);
+							},
+							success:function(response){
+								console.log('2 success');
+								console.log(response);
+								$row.remove();
+							},
+							error: function (jqXHR, textStatus, errorThrown) {
+								console.log('4 error');
+								console.log(errorThrown);
+							}
+						});
+						// ------------------------------------------------------
+					}
+				});
+			});
+		</script>
+ 
+<script>
+	
+	const steps = document.querySelectorAll('.naveg-steps-item');
+
+	steps.forEach(step => {
+	if (step.classList.contains('current')) {
+		step.style.display = 'flex'; // se tiver .current
+	} else {
+		step.style.display = 'none';  // se não tiver
+	}
+	});
+
+</script>
 	<script type="text/javascript" src="assets/vue/utils.js?t=<?= $time ?>"></script>
 	<script type="text/javascript" src="assets/vue/inscricoes-cobrancas-doacoes.js?t=<?= $time ?>"></script>
 
